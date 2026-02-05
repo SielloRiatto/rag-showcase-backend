@@ -1,5 +1,19 @@
 # Development Guide
 
+## IDE Setup
+
+After installing dependencies with `uv sync` or `uv sync --extra dev`, make sure your IDE uses the virtual environment (`.venv`).
+
+### VS Code
+
+1. `Ctrl+Shift+P` → `Python: Select Interpreter`
+2. Select `.venv\Scripts\python.exe` (Windows) or `.venv/bin/python` (Linux/macOS)
+
+If `.venv` is not listed, enter the full path:
+```
+.\.venv\Scripts\python.exe
+```
+
 ## Adding a Model
 
 Create model file:
