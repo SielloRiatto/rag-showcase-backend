@@ -13,7 +13,7 @@ FastAPI application with PostgreSQL, SQLAlchemy (async) and Alembic.
 ```bash
 # Clone and install
 git clone <repo-url>
-cd rag-demo-alimentation
+cd rag-showcase
 uv sync
 
 # Configure

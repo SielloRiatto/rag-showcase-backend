@@ -1,5 +1,5 @@
 [project]
-name = "rag-demo-alimentation"
+name = "rag-showcase"
 version = "0.1.0"
 description = "RAG Demo Application"
 readme = "README.md"
