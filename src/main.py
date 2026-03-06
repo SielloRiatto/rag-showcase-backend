@@ -2,6 +2,8 @@ from contextlib import asynccontextmanager
 from collections.abc import AsyncIterator
 
 from fastapi import FastAPI
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 
 from src.api.routes import router
 from src.config import get_settings
@@ -24,6 +26,11 @@ def create_app() -> FastAPI:
     )
 
     app.include_router(router)
+    app.mount("/static", StaticFiles(directory="src/static"), name="static")
+
+    @app.get("/favicon.ico", include_in_schema=False)
+    async def favicon() -> FileResponse:
+        return FileResponse("src/static/favicon.ico")
 
     @app.get("/health")
     async def health_check() -> dict[str, str]:
